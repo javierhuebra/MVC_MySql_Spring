@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar</title>
+</head>
+<body>
+<h1>Editar</h1>
+<form th:action="@{/books/{id}(id=${book.id})}" method="POST" th:object="${book}">
+  <input type="hidden" name="_method" value="PUT">
+
+  <label>Title
+    <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+    <input type="text" th:field="*{title}"/>
+  </label>
+
+  <label>Description
+    <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+    <textarea th:field="*{description}"></textarea>
+  </label>
+
+  <label>Language
+    <span th:if="${#fields.hasErrors('language')}" th:errors="*{language}"></span>
+    <input type="text" th:field="*{language}"/>
+  </label>
+
+  <label>Pages
+    <span th:if="${#fields.hasErrors('numberOfPages')}" th:errors="*{numberOfPages}"></span>
+    <input type="number" th:field="*{numberOfPages}"/>
+  </label>
+
+  <input type="submit" value="Submit"/>
+</form>
+
+</body>
+</html>

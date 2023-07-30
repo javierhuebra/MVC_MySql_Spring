@@ -14,7 +14,12 @@
         <h3 style="color: darkblue;"><strong>Idioma:</strong> <span th:text="${book.language}"></span></h3>
         <h3 style="color: darkblue;"><strong>Número de páginas:</strong> <span th:text="${book.numberOfPages}"></span></h3>
 
-        <button>Editar</button>
+        <a th:href="@{/books/{id}/edit(id=${book.id})}">
+            <button>Editar</button>
+        </a>
+        <form th:action="@{/books/{id}(id=${book.id})}" th:method="delete">
+            <button type="submit">Eliminar libro</button>
+        </form>
         <a href="/" class="btn">Volver</a>
     </div>
 </body>
