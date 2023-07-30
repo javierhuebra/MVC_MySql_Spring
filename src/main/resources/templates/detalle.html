@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="background-color: darkseagreen;" th:text="${book.title}">Titulo del libro</h1>
+        <h3 style="color: darkblue;"><strong>Descripción:</strong> <span th:text="${book.description}"></span></h3>
+        <h3 style="color: darkblue;"><strong>Idioma:</strong> <span th:text="${book.language}"></span></h3>
+        <h3 style="color: darkblue;"><strong>Número de páginas:</strong> <span th:text="${book.numberOfPages}"></span></h3>
+
+        <button>Editar</button>
+        <a href="/" class="btn">Volver</a>
+    </div>
+</body>
+
+</html>

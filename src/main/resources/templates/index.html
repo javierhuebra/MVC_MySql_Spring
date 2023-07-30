@@ -3,8 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+<h1>All Books</h1>
+<a href="/new">
+    <button>Agregar Libro</button>
+</a>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Language</th>
+        <th>Number of Pages</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book : ${books}">
+        <td th:text="${book.id}"></td>
+        <td th:text="${book.title}"></td>
+        <td th:text="${book.description}"></td>
+        <td th:text="${book.language}"></td>
+        <td th:text="${book.numberOfPages}"></td>
+        <td style="border: none; ">
+            <a th:href="@{/books/{id}(id=${book.id})}">
+                <button style="margin: 0;background-color: rgb(107, 49, 49); color: white;">Detalles</button>
+            </a>
+        </td>
 
+    </tr>
+
+    </tbody>
+</table>
 </body>
 </html>
